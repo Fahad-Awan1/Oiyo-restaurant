@@ -27,7 +27,7 @@ await sharp(Buffer.from(favicon.replace('rx="16"', 'rx="0"'))).resize(180, 180).
 for (const s of [192, 512]) await sharp(Buffer.from(favicon)).resize(s, s).png().toFile(`${OUT}/icon-${s}.png`);
 
 // Paper grain: soft monochrome noise, tiled by CSS
-const N = 160;
+const N = 128;
 const px = Buffer.alloc(N * N * 4);
 for (let i = 0; i < N * N; i++) {
   const v = 120 + Math.floor(Math.random() * 110);

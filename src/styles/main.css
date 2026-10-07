@@ -2,14 +2,13 @@
    Oiyo — design system
    Tokens → base → layout → components. Page styles live in ./pages/*.css
    ========================================================================== */
-@import '@fontsource/playfair-display/latin-400.css';
-@import '@fontsource/playfair-display/latin-500.css';
-@import '@fontsource/playfair-display/latin-400-italic.css';
-@import '@fontsource/jost/latin-300.css';
-@import '@fontsource/jost/latin-400.css';
-@import '@fontsource/jost/latin-500.css';
-@import '@fontsource/cormorant-garamond/latin-400-italic.css';
-@import '@fontsource/cormorant-garamond/latin-500-italic.css';
+/* Self-hosted, Latin-only, just the five faces the design uses. The two
+   critical ones are preloaded in partials/head.html. */
+@font-face { font-family: 'Playfair Display'; src: url('/fonts/playfair-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Playfair Display'; src: url('/fonts/playfair-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Jost'; src: url('/fonts/jost-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Jost'; src: url('/fonts/jost-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('/fonts/cormorant-500-italic.woff2') format('woff2'); font-weight: 500; font-style: italic; font-display: swap; }
 
 :root {
   /* palette (from the brand board) */
@@ -355,10 +354,9 @@ a:hover .link-arrow .icon, .link-arrow:hover .icon { transform: translateX(5px);
   inset: 0;
   z-index: 90;
   pointer-events: none;
-  opacity: 0.32;
-  mix-blend-mode: multiply;
+  opacity: 0.2; /* plain alpha: a full-screen blend mode re-composites every scroll frame on phones */
   background-image: url('/noise.png');
-  background-size: 160px;
+  background-size: 128px;
 }
 
 .preloader {
@@ -1025,4 +1023,12 @@ html.pt-arriving .pt__center { opacity: 1; }
 @media (max-width: 520px) {
   .cselect__panel { left: -4px; right: -4px; }
   .cselect__panel--grid .cselect__opt { font-size: 0.88rem; }
+}
+
+/* ----- button rows (heroes, CTAs) ---------------------------------------- */
+.hero__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: clamp(22px, 3vw, 30px); }
+@media (max-width: 599px) {
+  /* phones: one clean column of equal, full-width buttons */
+  .hero__ctas { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero__ctas > .btn { width: 100%; justify-content: center; }
 }

@@ -11,6 +11,8 @@
 <meta property="og:image" content="/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <!-- Stylesheets are linked (not imported from JS) so they block first paint in dev and production alike: no unstyled flash. -->
+<link rel="preload" href="/fonts/playfair-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/jost-400.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/src/styles/main.css" />
 <script>
   // Runs before first paint: flags JS, skips the preloader after the first visit, sets the season.

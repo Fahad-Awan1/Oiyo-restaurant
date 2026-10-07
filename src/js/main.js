@@ -21,7 +21,7 @@ initChatLauncher();
 initNewsletter();
 
 // fonts settle the layout; never wait on them for more than a moment
-const fontsReady = Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 1800))]);
+const fontsReady = Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 1000))]);
 Promise.all([runPreloader(), fontsReady]).then(arrive).then(() => {
   initMotion();
   heroEntrance();
@@ -93,5 +93,5 @@ function heroEntrance() {
   const items = $$('[data-hero-in]');
   if (!items.length) return;
   if (reducedMotion) return gsap.set(items, { opacity: 1, y: 0 });
-  gsap.to(items, { opacity: 1, y: 0, duration: 1.2, ease: 'expo.out', stagger: 0.08, delay: 0.3 });
+  gsap.to(items, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', stagger: 0.06, delay: 0.05 });
 }

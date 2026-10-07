@@ -33,9 +33,20 @@ function isTransitionLink(a, e) {
   return url;
 }
 
+// Warm the next page as soon as the visitor shows intent (hover, touch,
+// focus), and at the latest on click, so its HTML downloads while the pour
+// plays. Covers browsers without speculation rules (Safari, Firefox).
+const warmed = new Set();
+function warm(url) {
+  if (warmed.has(url.pathname)) return;
+  warmed.add(url.pathname);
+  fetch(url.pathname, { credentials: 'same-origin', priority: 'low' }).catch(() => {});
+}
+
 function leave(url) {
   if (leaving) return;
   leaving = true;
+  warm(url);
   const el = $('.pt');
   const label = LABELS[fileOf(url)] ?? 'One moment';
   $('[data-pt-label]').textContent = label;
@@ -44,13 +55,12 @@ function leave(url) {
   el.classList.add('is-active');
   const [coffee, forest] = $$('.pt__layer', el);
   const go = () => location.assign(url.href);
-  const safety = setTimeout(go, 1600);
+  const safety = setTimeout(go, 1200);
   gsap
     .timeline({ onComplete: () => (clearTimeout(safety), go()) })
-    .fromTo(coffee, { yPercent: 0, y: '100vh' }, { y: 0, duration: 0.75, ease: 'power3.inOut' })
-    .fromTo(forest, { y: '100vh' }, { y: 0, duration: 0.75, ease: 'power3.inOut' }, 0.12)
-    .fromTo('.pt__center', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 0.5)
-    .to({}, { duration: 0.12 }); // a breath before the swap
+    .fromTo(coffee, { yPercent: 0, y: '100vh' }, { y: 0, duration: 0.55, ease: 'power3.inOut' })
+    .fromTo(forest, { y: '100vh' }, { y: 0, duration: 0.55, ease: 'power3.inOut' }, 0.08)
+    .fromTo('.pt__center', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 0.38);
 }
 
 /** Reveal the page if we arrived through the pour. Resolves when the hero can start animating. */
@@ -72,14 +82,20 @@ export function arrive() {
           gsap.set('.pt__center', { clearProps: 'all' });
         },
       })
-      .to('.pt__center', { opacity: 0, y: -30, duration: 0.4, ease: 'power2.in' })
-      .to(forest, { y: '-100vh', yPercent: -12, duration: 0.95, ease: 'power3.inOut' }, 0.15)
-      .to(coffee, { y: '-100vh', yPercent: -12, duration: 0.95, ease: 'power3.inOut' }, 0.27)
-      .add(resolve, 0.55);
+      .to('.pt__center', { opacity: 0, y: -24, duration: 0.25, ease: 'power2.in' })
+      .to(forest, { y: '-100vh', yPercent: -12, duration: 0.7, ease: 'power3.inOut' }, 0.08)
+      .to(coffee, { y: '-100vh', yPercent: -12, duration: 0.7, ease: 'power3.inOut' }, 0.16)
+      .add(resolve, 0.3);
   });
 }
 
 export function initPageTransitions() {
+  const intent = (e) => {
+    const a = e.target.closest?.('a[href]');
+    const url = a && isTransitionLink(a, { button: 0 });
+    if (url) warm(url);
+  };
+  ['pointerover', 'touchstart', 'focusin'].forEach((t) => document.addEventListener(t, intent, { passive: true }));
   if (reducedMotion) return;
   document.addEventListener('click', (e) => {
     const url = isTransitionLink(e.target.closest('a[href]'), e);

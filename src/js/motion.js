@@ -47,12 +47,15 @@ export function splitLines(el) {
       words.push(n);
     }
   });
-  // group by vertical position
+  // group by vertical position. Words set in another face (the italic accent,
+  // or a glyph the browser draws from a fallback font) sit a few px higher or
+  // lower on the same line, so only a jump of about half a line counts as new.
+  const tolerance = parseFloat(getComputedStyle(el).fontSize) * 0.5;
   const lines = [];
   let top = null;
   words.forEach((w) => {
     const t = w.offsetTop;
-    if (top === null || Math.abs(t - top) > 4) {
+    if (top === null || Math.abs(t - top) > tolerance) {
       lines.push([]);
       top = t;
     }

@@ -7,7 +7,6 @@
 .hero__copy { grid-area: copy; position: relative; z-index: 2; padding-top: clamp(10px, 3vw, 40px); }
 .hero__greeting { margin-bottom: 18px; }
 .hero h1 { max-width: none; }
-.hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .hero__status { margin-top: 22px; }
 .hero__stage-wrap { grid-area: stage; position: relative; aspect-ratio: 1 / 1.06; width: 100%; max-width: min(620px, calc((100svh - var(--header-h) - 40px) * 0.94)); justify-self: end; }
 .hero__backdrop {
@@ -68,7 +67,6 @@ html.js.motion [data-hero-in] { opacity: 0; transform: translateY(24px); }
   .hero__drinks-label { flex-basis: 100%; text-align: center; }
   .hero__drinks .chip { min-height: 38px; padding: 0.45em 0.9em; font-size: 0.85rem; }
   .hero__moment img { width: 84px; height: 84px; }
-  .hero__ctas .btn { flex: 1 1 auto; }
 }
 
 /* ritual builder */
