@@ -1,0 +1,89 @@
+<!-- @include partials/icons.html -->
+
+<!-- Page transition: two liquid layers pour in, the new page drains them away -->
+<div class="pt" aria-hidden="true">
+  <div class="pt__layer pt__layer--coffee">
+    <svg class="pt__wave pt__wave--top" viewBox="0 0 2880 80" preserveAspectRatio="none"><path d="M0 40C240 0 480 0 720 40C960 80 1200 80 1440 40C1680 0 1920 0 2160 40C2400 80 2640 80 2880 40V80H0z" /></svg>
+    <svg class="pt__wave pt__wave--bottom" viewBox="0 0 2880 80" preserveAspectRatio="none"><path d="M0 40C240 0 480 0 720 40C960 80 1200 80 1440 40C1680 0 1920 0 2160 40C2400 80 2640 80 2880 40V80H0z" /></svg>
+  </div>
+  <div class="pt__layer pt__layer--forest">
+    <svg class="pt__wave pt__wave--top" viewBox="0 0 2880 80" preserveAspectRatio="none"><path d="M0 40C240 0 480 0 720 40C960 80 1200 80 1440 40C1680 0 1920 0 2160 40C2400 80 2640 80 2880 40V80H0z" /></svg>
+    <svg class="pt__wave pt__wave--bottom" viewBox="0 0 2880 80" preserveAspectRatio="none"><path d="M0 40C240 0 480 0 720 40C960 80 1200 80 1440 40C1680 0 1920 0 2160 40C2400 80 2640 80 2880 40V80H0z" /></svg>
+  </div>
+  <div class="pt__center">
+    <span class="pt__steam"><i></i><i></i><i></i></span>
+    <svg class="pt__mark" viewBox="0 0 56 48"><use href="#logo-mark" /></svg>
+    <p class="pt__label" data-pt-label></p>
+  </div>
+</div>
+<script>
+  (function () { var l = window.__ptLabel; if (l) document.querySelector('[data-pt-label]').textContent = l; })();
+</script>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <svg class="preloader__mark" viewBox="0 0 56 48"><use href="#logo-mark" /></svg>
+    <p class="preloader__word">OIYO</p>
+    <p class="preloader__tag">Slowly brewing your visit</p>
+    <div class="preloader__bar"><span></span></div>
+    <p class="preloader__count"><span data-preload-count>0</span>%</p>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner container">
+    <a href="/" class="logo" aria-label="Oiyo, home">
+      <span class="logo__word">OIYO</span>
+      <svg class="logo__mark" viewBox="0 0 56 48" aria-hidden="true"><use href="#logo-mark" /></svg>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="/menu.html" data-nav="menu">Menu</a></li>
+        <li><a class="nav__link" href="/story.html" data-nav="story">Story</a></li>
+        <li><a class="nav__link" href="/rituals.html" data-nav="rituals">Rituals</a></li>
+        <li><a class="nav__link" href="/visit.html" data-nav="visit">Visit</a></li>
+        <li><a class="nav__link" href="/journal.html" data-nav="journal">Journal</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-sound aria-pressed="false" aria-label="Play ambient café sound" title="Ambient café sound">
+        <svg class="icon icon--on" aria-hidden="true"><use href="#i-sound" /></svg>
+        <svg class="icon icon--off" aria-hidden="true"><use href="#i-mute" /></svg>
+      </button>
+      <button class="icon-btn" type="button" data-tray-open aria-label="Open your order tray" title="Your tray">
+        <svg class="icon" aria-hidden="true"><use href="#i-tray" /></svg>
+        <span class="tray-count" data-tray-count hidden>0</span>
+      </button>
+      <a class="btn btn--primary btn--sm header-cta" href="/visit.html#reserve" data-magnetic>
+        Reserve a Table <svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg>
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-line" aria-hidden="true"><span data-scroll-line></span></div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu__blob" aria-hidden="true"></div>
+  <nav class="mobile-menu__nav" aria-label="Mobile">
+    <a href="/" data-nav="index"><span>01</span>Home</a>
+    <a href="/menu.html" data-nav="menu"><span>02</span>Menu</a>
+    <a href="/story.html" data-nav="story"><span>03</span>Story</a>
+    <a href="/rituals.html" data-nav="rituals"><span>04</span>Rituals</a>
+    <a href="/visit.html" data-nav="visit"><span>05</span>Visit</a>
+    <a href="/journal.html" data-nav="journal"><span>06</span>Journal</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <p class="status-pill" data-open-status><span class="status-pill__dot"></span><span data-open-text>Checking our hours…</span></p>
+    <a class="btn btn--primary" href="/visit.html#reserve">Reserve a Table <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+    <p class="mobile-menu__addr">24 Willow Lane, Portland, OR 97214</p>
+  </div>
+</div>

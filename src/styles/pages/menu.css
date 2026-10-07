@@ -1,0 +1,72 @@
+/* ---------- Menu ---------- */
+.menu-hero__note { position: absolute; left: -4%; bottom: 8%; z-index: 3; padding: 16px 22px; border-radius: var(--r-md); background: var(--surface); box-shadow: var(--shadow-lg); }
+.menu-hero__note .display { display: block; font-size: 1.6rem; line-height: 1; }
+.menu-hero__note small { display: block; margin-top: 6px; color: var(--ink-soft); font-size: var(--fs-sm); }
+
+.menu-toolbar { position: sticky; top: 10px; z-index: 30; margin-top: -10px; transition: top 0.55s var(--ease); }
+.site-header:not(.is-hidden) ~ main .menu-toolbar { top: calc(70px + 8px); }
+.menu-toolbar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 12px; border-radius: 999px; background: rgba(246, 242, 234, 0.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: var(--shadow-md); }
+.menu-tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; }
+.menu-tabs::-webkit-scrollbar { display: none; }
+.menu-tabs .chip { border-color: transparent; background: none; scroll-snap-align: start; }
+.menu-tabs .chip.is-active { background: var(--forest); }
+.menu-toolbar__row { display: flex; align-items: center; gap: 10px; }
+.menu-diet { display: flex; gap: 6px; }
+.chip--sm { min-height: 36px; padding: 0.35em 0.9em; font-size: 0.82rem; }
+.menu-search { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--ink-soft); }
+.menu-search input { border: 0; background: none; outline: none; width: 210px; font-size: 0.9rem; color: var(--ink); }
+.menu-search:focus-within { border-color: var(--moss); }
+
+.menu-section { padding-top: clamp(32px, 4vw, 56px); }
+.menu-count { margin-bottom: 22px; color: var(--ink-soft); font-size: var(--fs-sm); letter-spacing: 0.04em; }
+.menu-count span { font-family: var(--font-display); font-size: 1.2rem; color: var(--forest); }
+.menu-grid .p-card.is-hidden { display: none; }
+.menu-empty { display: grid; justify-items: center; gap: 14px; padding: 60px 20px; text-align: center; color: var(--ink-soft); }
+.menu-empty > .icon { width: 48px; height: 48px; color: var(--clay); }
+
+@media (max-width: 1099px) {
+  .menu-toolbar__inner { border-radius: var(--r-lg); }
+}
+@media (max-width: 1023px) {
+  .site-header:not(.is-hidden) ~ main .menu-toolbar { top: calc(72px + 6px); }
+}
+@media (max-width: 767px) {
+  .menu-toolbar__inner { padding: 10px; flex-direction: column; flex-wrap: nowrap; align-items: stretch; }
+  .menu-toolbar__inner > * { min-width: 0; }
+  .menu-toolbar { position: relative; top: auto !important; margin-top: 0; }
+  .menu-toolbar__row { flex-wrap: wrap; }
+  .menu-search { flex: 1 1 100%; }
+  .menu-search input { width: 100%; }
+  .menu-diet { overflow-x: auto; scrollbar-width: none; }
+  .menu-hero__note { left: 0; bottom: 0; }
+}
+
+/* seasonal tray */
+.feature-tray { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: clamp(24px, 4vw, 60px); padding: clamp(28px, 4vw, 56px); }
+.feature-tray__copy .eyebrow { margin-bottom: 12px; }
+.feature-tray__copy > p:not(.eyebrow) { color: rgba(243, 239, 230, 0.78); margin-top: 16px; max-width: 42ch; }
+.feature-tray__price { font-size: 1.8rem !important; color: var(--cream) !important; margin: 18px 0 22px !important; }
+.feature-tray__img { aspect-ratio: 1.25; overflow: hidden; }
+.feature-tray__img img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 899px) { .feature-tray { grid-template-columns: 1fr; } .feature-tray__img { order: -1; } }
+
+/* allergens */
+.allergen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+.allergen-grid .eyebrow { margin-bottom: 14px; }
+.allergen-grid .lead { margin: 18px 0 24px; }
+.legend { display: grid; gap: 12px; }
+.legend li { display: flex; align-items: center; gap: 14px; color: var(--ink-soft); }
+.legend span { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--moss); font-weight: 500; }
+@media (max-width: 899px) { .allergen-grid { grid-template-columns: 1fr; } }
+
+/* sourcing band */
+.source-band { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(18px, 3vw, 36px); padding: clamp(20px, 3vw, 32px) clamp(20px, 4vw, 48px); border-radius: var(--r-lg); }
+.source-band__icon { display: grid; place-items: center; width: 92px; height: 92px; border-radius: 50%; background: var(--forest); color: var(--dew); }
+.source-band__icon .icon { width: 44px; height: 44px; }
+.source-band__title { font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem); margin: 6px 0 8px; }
+.source-band p:last-child { color: var(--ink-soft); max-width: 60ch; }
+@media (max-width: 767px) {
+  .source-band { grid-template-columns: 1fr; justify-items: start; }
+  .source-band__icon { width: 64px; height: 64px; }
+  .source-band__icon .icon { width: 30px; height: 30px; }
+}

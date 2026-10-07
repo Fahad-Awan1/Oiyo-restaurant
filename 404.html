@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include partials/head.html -->
+    <title>Page not found | Oiyo</title>
+    <meta name="robots" content="noindex" />
+    <script type="module" src="/src/js/main.js"></script>
+    <style>
+      .nf { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: calc(var(--header-h) + 40px) var(--gutter) 60px; }
+      .nf__art { width: min(300px, 70vw); margin: 0 auto 10px; color: var(--forest); }
+      .nf__art .spill { fill: var(--coffee); opacity: 0.85; transform-origin: 50% 50%; animation: spill 3s var(--ease) infinite alternate; }
+      @keyframes spill { to { transform: scaleX(1.08); } }
+      .nf h1 { font-size: clamp(2.4rem, 1.6rem + 4vw, 4.5rem); }
+      .nf p { color: var(--ink-soft); margin: 14px auto 28px; max-width: 42ch; }
+      .nf .hero__ctas { justify-content: center; display: flex; gap: 12px; flex-wrap: wrap; }
+    </style>
+  </head>
+  <body data-page="404">
+    <!-- @include partials/header.html -->
+    <main id="main" class="nf">
+      <div>
+        <svg class="nf__art" viewBox="0 0 300 170" aria-hidden="true">
+          <ellipse class="spill" cx="170" cy="140" rx="110" ry="18" />
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-78 110 110)">
+            <path d="M60 60h90v40a45 45 0 0 1-90 0z" fill="#f6f2ea" />
+            <path d="M150 72h10a16 16 0 0 1 0 32h-12" />
+          </g>
+          <circle cx="250" cy="120" r="6" fill="#5a3521" /><circle cx="270" cy="132" r="4" fill="#5a3521" />
+        </svg>
+        <h1>A little spill.</h1>
+        <p>The page you were looking for has wandered off, probably for a slow coffee. Let’s find you a seat.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="/">Back home <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          <a class="btn btn--secondary" href="/menu.html">See the menu</a>
+        </div>
+      </div>
+    </main>
+    <!-- @include partials/footer.html -->
+  </body>
+</html>

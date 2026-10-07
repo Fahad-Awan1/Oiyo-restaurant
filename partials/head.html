@@ -1,0 +1,44 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#2F3A24" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:site_name" content="Oiyo" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<!-- Stylesheets are linked (not imported from JS) so they block first paint in dev and production alike: no unstyled flash. -->
+<link rel="stylesheet" href="/src/styles/main.css" />
+<script>
+  // Runs before first paint: flags JS, skips the preloader after the first visit, sets the season.
+  (function (d) {
+    var h = d.documentElement;
+    h.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      h.classList.add('motion');
+      // Safety net: never leave reveal-hidden content invisible if scripts fail.
+      setTimeout(function () { if (!window.__oiyoReady) h.classList.remove('motion', 'pt-arriving'); }, 4000);
+      // Arriving through the liquid page transition: start fully covered so the
+      // new page never flashes before the pour drains away.
+      try {
+        var pt = JSON.parse(sessionStorage.getItem('oiyo:pt') || 'null');
+        sessionStorage.removeItem('oiyo:pt');
+        if (pt && Date.now() - pt.t < 8000) {
+          h.classList.add('pt-arriving');
+          window.__ptLabel = pt.label;
+        }
+      } catch (e) {}
+    }
+    // the preloader greets first-time visitors on the home page only
+    var home = /\/(index\.html)?$/.test(location.pathname);
+    try { if (!home || h.classList.contains('pt-arriving') || sessionStorage.getItem('oiyo:visited')) h.classList.add('no-preload'); } catch (e) { h.classList.add('no-preload'); }
+    var m = new Date().getMonth();
+    h.dataset.season = m < 2 || m === 11 ? 'winter' : m < 5 ? 'spring' : m < 8 ? 'summer' : 'autumn';
+  })(document);
+</script>
+<script type="speculationrules">
+  { "prefetch": [{ "source": "document", "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
+</script>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include partials/head.html -->
+    <title>Journal · Notes from the Slow Table | Oiyo</title>
+    <meta name="description" content="Seasonal menus, brewing rituals, recipes and events from Oiyo, a slow garden café in Portland." />
+    <link rel="canonical" href="https://oiyo.cafe/journal.html" />
+    <meta property="og:title" content="The Oiyo Journal" />
+    <meta property="og:description" content="Stories, rituals and seasonal inspiration." />
+    <link rel="stylesheet" href="/src/styles/pages/journal.css" />
+    <script type="module" src="/src/js/pages/journal.js"></script>
+  </head>
+  <body data-page="journal">
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="page-hero journal-hero" aria-labelledby="journal-title" data-particles>
+        <div class="page-hero__deco" aria-hidden="true"></div>
+        <div class="container page-hero__grid">
+          <div class="page-hero__copy">
+            <p class="eyebrow" data-hero-in><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg> The Journal</p>
+            <h1 id="journal-title" class="display-hero" data-split data-split-now>Notes from the<br /><em class="accent">Slow Table.</em></h1>
+            <div class="rule" aria-hidden="true" data-hero-in><span></span></div>
+            <p class="lead" data-hero-in>Stories, rituals and seasonal inspiration: what we’re brewing, baking and gathering for, written slowly.</p>
+          </div>
+          <div class="page-hero__media">
+            <div class="blob blob--b">
+              <img src="/img/window-seat-sm.webp" srcset="/img/window-seat-sm.webp 640w, /img/window-seat-md.webp 960w, /img/window-seat-lg.webp 1400w" sizes="(min-width: 900px) 52vw, 100vw" alt="A window seat with a coffee, a notebook and a plant" width="640" height="480" fetchpriority="high" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section journal-section" aria-label="Articles">
+        <div class="container">
+          <div class="journal-filters" role="group" aria-label="Filter articles">
+            <button class="chip is-active" type="button" data-jfilter="all" aria-pressed="true">All stories</button>
+            <button class="chip" type="button" data-jfilter="seasonal" aria-pressed="false">Seasonal</button>
+            <button class="chip" type="button" data-jfilter="rituals" aria-pressed="false">Rituals</button>
+            <button class="chip" type="button" data-jfilter="events" aria-pressed="false">Events</button>
+            <button class="chip" type="button" data-jfilter="recipes" aria-pressed="false">Recipes</button>
+          </div>
+          <div class="journal-grid" data-journal-grid>
+            <!-- @render journal-grid -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section--tight" aria-labelledby="letter-title">
+        <div class="container">
+          <div class="letter panel-forest" data-reveal>
+            <div>
+              <p class="eyebrow">A letter each season</p>
+              <h2 id="letter-title" class="h2">Slow news, <em class="accent">four times a year.</em></h2>
+              <p>New menus, workshop dates and the occasional recipe. Never more than once a season.</p>
+            </div>
+            <form class="newsletter newsletter--inline" data-newsletter novalidate>
+              <label class="visually-hidden" for="nl-email-2">Email address</label>
+              <input id="nl-email-2" type="email" name="email" placeholder="Your email" autocomplete="email" required />
+              <button class="btn btn--light" type="submit">Subscribe <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+              <p class="newsletter__msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <dialog class="modal" data-article-modal aria-label="Article">
+        <button class="icon-btn modal__close" type="button" data-modal-close aria-label="Close article"><svg class="icon" aria-hidden="true"><use href="#i-close" /></svg></button>
+        <div class="modal__content" data-modal-content data-lenis-prevent></div>
+      </dialog>
+      <!-- @render journal-articles -->
+    </main>
+
+    <!-- @include partials/footer.html -->
+  </body>
+</html>

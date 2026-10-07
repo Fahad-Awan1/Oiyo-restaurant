@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include partials/head.html -->
+    <title>Oiyo · Coffee, Sculpted by Ritual | Garden Café in Portland</title>
+    <meta name="description" content="Oiyo is a slow garden café in Portland: small-batch coffee, ceremonial matcha and pastries baked every morning. Reserve a table, explore the menu or build your ritual." />
+    <link rel="canonical" href="https://oiyo.cafe/" />
+    <meta property="og:title" content="Oiyo · Coffee, Sculpted by Ritual" />
+    <meta property="og:description" content="Small-batch coffee, ceremonial matcha and slow bakes in a Portland garden café." />
+    <link rel="preload" as="image" href="/img/cappuccino-sm.webp" imagesrcset="/img/cappuccino-sm.webp 640w, /img/cappuccino-md.webp 960w, /img/cappuccino-lg.webp 1400w" imagesizes="(min-width: 1024px) 45vw, 90vw" fetchpriority="high" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CafeOrCoffeeShop",
+        "name": "Oiyo",
+        "image": "https://oiyo.cafe/og-image.jpg",
+        "url": "https://oiyo.cafe/",
+        "telephone": "+1-713-364-5155",
+        "email": "safersolutionllc@gmail.com",
+        "priceRange": "$$",
+        "servesCuisine": ["Coffee", "Matcha", "Bakery", "Breakfast"],
+        "acceptsReservations": "True",
+        "menu": "https://oiyo.cafe/menu.html",
+        "address": { "@type": "PostalAddress", "streetAddress": "24 Willow Lane", "addressLocality": "Portland", "addressRegion": "OR", "postalCode": "97214", "addressCountry": "US" },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "18:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "19:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "17:00" }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="/src/styles/pages/home.css" />
+    <script type="module" src="/src/js/pages/home.js"></script>
+  </head>
+  <body data-page="home">
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__deco hero__deco--a" aria-hidden="true"></div>
+        <div class="hero__deco hero__deco--b" aria-hidden="true"></div>
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="hero__greeting eyebrow" data-hero-in><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg><span data-greeting>Slow down with us</span></p>
+            <h1 id="hero-title" class="display-hero" data-split data-split-now>
+              Coffee,<br />Sculpted<br />by <em class="accent">Ritual.</em><svg class="ornament" aria-hidden="true"><use href="#i-sprig" /></svg>
+            </h1>
+            <div class="rule" aria-hidden="true" data-hero-in><span></span></div>
+            <p class="lead" data-hero-in>Thoughtfully sourced beans, seasonal ingredients and time-honored rituals, crafted into moments that nourish the body and calm the mind.</p>
+            <div class="hero__ctas" data-hero-in>
+              <a class="btn btn--primary" href="/menu.html" data-magnetic>Explore the Menu <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <a class="btn btn--secondary" href="/story.html" data-magnetic>Our Story <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+            <p class="status-pill hero__status" data-open-status data-hero-in><span class="status-pill__dot"></span><span data-open-text>Checking our hours…</span></p>
+          </div>
+
+          <div class="hero__stage-wrap">
+            <div class="hero__backdrop blob" aria-hidden="true"><span class="hero__plinth"></span></div>
+            <div class="stage hero__stage" data-cup-anchor="hero" data-cursor="Brew">
+              <img class="stage__poster blob" src="/img/cappuccino-sm.webp" srcset="/img/cappuccino-sm.webp 640w, /img/cappuccino-md.webp 960w, /img/cappuccino-lg.webp 1400w" sizes="(min-width: 1024px) 45vw, 90vw" alt="A cappuccino with rosetta latte art on a speckled saucer" width="640" height="480" fetchpriority="high" />
+            </div>
+            <div class="hero__drinks" role="group" aria-label="Pour a drink into the cup" data-hero-in>
+              <span class="hero__drinks-label">Pour me a</span>
+              <button class="chip is-active" type="button" data-drink="cappuccino" aria-pressed="true">Cappuccino</button>
+              <button class="chip" type="button" data-drink="matcha" aria-pressed="false">Matcha</button>
+              <button class="chip" type="button" data-drink="chai" aria-pressed="false">Chai</button>
+              <button class="chip" type="button" data-drink="cocoa" aria-pressed="false">Cocoa</button>
+            </div>
+            <div class="badge hero__badge" aria-hidden="true">
+              <svg class="badge__text" viewBox="0 0 100 100"><defs><path id="badge-circle" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0" /></defs><text><textPath href="#badge-circle">Slow brewed · Meaningfully made · </textPath></text></svg>
+              <svg class="badge__icon"><use href="#i-sprig" /></svg>
+            </div>
+          </div>
+
+          <a class="hero__moment" href="/menu.html#matcha" data-hero-in>
+            <img src="/img/matcha-ritual-sm.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
+            <span>
+              <strong>Matcha Moments</strong>
+              <small>Ceremonial grade matcha, whisked with care.</small>
+              <span class="link-arrow">Explore Matcha <svg class="icon" aria-hidden="true"><use href="#i-arrow-ur" /></svg></span>
+            </span>
+          </a>
+        </div>
+        <a class="scroll-cue" href="#ritual-builder" aria-label="Scroll to the Ritual Builder"><span></span>Scroll to discover</a>
+      </section>
+
+      <!-- ============ RITUAL BUILDER ============ -->
+      <section class="section builder-section" id="ritual-builder" aria-labelledby="builder-title">
+        <div class="container">
+          <div class="builder panel-forest">
+            <div class="builder__stage-col">
+              <div class="stage builder__stage" data-cup-anchor="builder" data-drag data-cursor="Drag">
+                <img class="stage__poster blob blob--b" src="/img/latte-sm.webp" alt="A latte in a stoneware cup" width="640" height="480" loading="lazy" decoding="async" />
+              </div>
+              <p class="stage-hint builder__hint"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg> Drag the cup to turn it</p>
+            </div>
+            <div class="builder__panel">
+              <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg> Ritual Builder</p>
+              <h2 id="builder-title" class="h2" data-split>Build your <em class="accent">ritual.</em></h2>
+              <p class="builder__lead">Choose a base, a milk and a little sweetness. Watch your cup change, then add it to your tray for the counter.</p>
+
+              <fieldset class="builder__group">
+                <legend>Base</legend>
+                <div class="builder__options" data-option="drink">
+                  <label><input type="radio" name="drink" value="cappuccino" checked /><span><svg class="icon" aria-hidden="true"><use href="#i-bean" /></svg>Cappuccino</span></label>
+                  <label><input type="radio" name="drink" value="matcha" /><span><svg class="icon" aria-hidden="true"><use href="#i-leaf" /></svg>Matcha</span></label>
+                  <label><input type="radio" name="drink" value="chai" /><span><svg class="icon" aria-hidden="true"><use href="#i-flame" /></svg>Chai</span></label>
+                  <label><input type="radio" name="drink" value="cocoa" /><span><svg class="icon" aria-hidden="true"><use href="#i-heart" /></svg>Cocoa</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="builder__group">
+                <legend>Milk</legend>
+                <div class="builder__options" data-option="milk">
+                  <label><input type="radio" name="milk" value="whole" checked /><span>Whole</span></label>
+                  <label><input type="radio" name="milk" value="oat" /><span>Oat</span></label>
+                  <label><input type="radio" name="milk" value="none" /><span>None</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="builder__group">
+                <legend>Sweetness</legend>
+                <div class="builder__options" data-option="sweet">
+                  <label><input type="radio" name="sweet" value="none" checked /><span>Pure</span></label>
+                  <label><input type="radio" name="sweet" value="honey" /><span>Wildflower honey</span></label>
+                  <label><input type="radio" name="sweet" value="maple" /><span>Smoked maple</span></label>
+                </div>
+              </fieldset>
+
+              <div class="builder__summary">
+                <div>
+                  <p class="builder__name" data-builder-name>Whole-milk Cappuccino</p>
+                  <p class="builder__price" data-builder-price>$5.25</p>
+                </div>
+                <button class="btn btn--light" type="button" data-builder-add data-magnetic>Add to tray <svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MARQUEE ============ -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__item">Dew Cappuccino <svg class="icon"><use href="#i-sprig" /></svg> <em>Stone Matcha</em> <svg class="icon"><use href="#i-sprig" /></svg> Pistachio Crème Roll <svg class="icon"><use href="#i-sprig" /></svg> <em>Amber Cold Brew</em> <svg class="icon"><use href="#i-sprig" /></svg> Cinnamon Knot <svg class="icon"><use href="#i-sprig" /></svg></span>
+          <span class="marquee__item">Dew Cappuccino <svg class="icon"><use href="#i-sprig" /></svg> <em>Stone Matcha</em> <svg class="icon"><use href="#i-sprig" /></svg> Pistachio Crème Roll <svg class="icon"><use href="#i-sprig" /></svg> <em>Amber Cold Brew</em> <svg class="icon"><use href="#i-sprig" /></svg> Cinnamon Knot <svg class="icon"><use href="#i-sprig" /></svg></span>
+        </div>
+      </div>
+
+      <!-- ============ SIGNATURE PICKS ============ -->
+      <section class="section" aria-labelledby="picks-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg> Signature picks</p>
+            <h2 id="picks-title" class="h2" data-split>Crafted for the Season</h2>
+            <p>A few favorites, curated with intention.</p>
+          </header>
+          <div class="grid grid-4 grid-4--lock grid-4--phone2" data-stagger>
+            <!-- @render signature-cards -->
+          </div>
+          <p class="text-center picks__more"><a class="btn btn--secondary" href="/menu.html">See the full menu <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a></p>
+        </div>
+      </section>
+
+      <!-- ============ STORY TEASER ============ -->
+      <section class="section story-teaser" aria-labelledby="story-title">
+        <div class="container story-teaser__grid">
+          <div class="story-teaser__media">
+            <div class="story-teaser__img blob" data-clip>
+              <img data-parallax="0.12" src="/img/pour-over-sm.webp" srcset="/img/pour-over-sm.webp 640w, /img/pour-over-md.webp 960w, /img/pour-over-lg.webp 1400w" sizes="(min-width: 1024px) 45vw, 100vw" alt="A barista slowly pouring water over a pour-over dripper" width="640" height="480" loading="lazy" decoding="async" />
+            </div>
+            <div class="story-teaser__since" data-reveal>
+              <span class="display">2019</span>
+              <small>One cart, one sourdough starter, one slow idea.</small>
+            </div>
+          </div>
+          <div class="story-teaser__copy">
+            <p class="eyebrow" data-reveal>Our story</p>
+            <h2 id="story-title" class="h2" data-split>Where Ritual Meets the <em class="accent">Everyday.</em></h2>
+            <p class="lead" data-reveal>Oiyo was born from slow mornings, quiet intentions and a love for the small things that ground us. We create moments of presence through thoughtful ingredients, time-honored rituals and warm, welcoming spaces.</p>
+            <ol class="mini-steps" data-stagger>
+              <li data-reveal><span class="mini-steps__icon"><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg></span><strong>Source</strong><small>Seasonal, sustainably grown</small></li>
+              <li data-reveal><span class="mini-steps__icon"><svg class="icon" aria-hidden="true"><use href="#i-flame" /></svg></span><strong>Roast</strong><small>Small batches, truest character</small></li>
+              <li data-reveal><span class="mini-steps__icon"><svg class="icon" aria-hidden="true"><use href="#i-dripper" /></svg></span><strong>Pour</strong><small>Time and temperature, honored</small></li>
+              <li data-reveal><span class="mini-steps__icon"><svg class="icon" aria-hidden="true"><use href="#i-cheers" /></svg></span><strong>Share</strong><small>Moments, made together</small></li>
+            </ol>
+            <a class="btn btn--primary" href="/story.html" data-reveal data-magnetic>Read our story <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NUMBERS ============ -->
+      <section class="section--tight" aria-label="Oiyo in numbers">
+        <div class="container">
+          <ul class="numbers" data-stagger>
+            <li data-reveal><span class="numbers__n"><span data-count="12">12</span></span><span class="numbers__l">partner farms we buy from directly</span></li>
+            <li data-reveal><span class="numbers__n"><span data-count="48">48</span><sup>h</sup></span><span class="numbers__l">slow ferment in every sourdough loaf</span></li>
+            <li data-reveal><span class="numbers__n"><span data-count="80">80</span></span><span class="numbers__l">whisks of the chasen in each matcha</span></li>
+            <li data-reveal><span class="numbers__n"><span data-count="0">0</span></span><span class="numbers__l">reasons to rush. Stay as long as you like.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ QUOTE + REMINDER ============ -->
+      <section class="section" aria-label="Our philosophy">
+        <div class="container quote-grid">
+          <figure class="quote panel-forest" data-reveal>
+            <svg class="quote__mark" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V17C0 7 5 1 15 0v6c-5 1-7 4-7 9h7v15zm22 0V17c0-10 5-16 15-17v6c-5 1-7 4-7 9h7v15z" fill="currentColor" /></svg>
+            <blockquote>
+              <p>We believe the best moments aren’t rushed. They’re crafted with care, shared with others, and remembered.</p>
+            </blockquote>
+            <figcaption>The Oiyo team <svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg></figcaption>
+            <img class="quote__img" src="/img/cup-leaves-sm.webp" alt="" width="640" height="480" loading="lazy" decoding="async" />
+          </figure>
+          <aside class="reminder" data-reveal>
+            <p class="reminder__title display">Ritual Reminder <svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg></p>
+            <p class="reminder__text">Take a breath. Sip slowly. You’re exactly where you need to be.</p>
+            <a class="link-arrow" href="/rituals.html">Explore Rituals <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            <div class="badge reminder__badge" aria-hidden="true">
+              <svg class="badge__text" viewBox="0 0 100 100"><defs><path id="badge-circle-2" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0" /></defs><text><textPath href="#badge-circle-2">Slow brewed · Meaningfully made · </textPath></text></svg>
+              <svg class="badge__icon"><use href="#i-sprig" /></svg>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============ JOURNAL PREVIEW ============ -->
+      <section class="section" aria-labelledby="journal-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg> From the Journal</p>
+            <h2 id="journal-title" class="h2" data-split>Stories, rituals &amp; seasonal notes</h2>
+          </header>
+          <div class="grid grid-3 grid-3--lock" data-stagger>
+            <!-- @render journal-preview -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ RESERVE CTA ============ -->
+      <section class="section cta-section" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta sheet">
+            <div class="cta__img blob blob--b" data-clip>
+              <img src="/img/interior-sm.webp" srcset="/img/interior-sm.webp 640w, /img/interior-md.webp 960w, /img/interior-lg.webp 1400w" sizes="(min-width: 900px) 45vw, 100vw" alt="Oiyo’s garden room, full of plants and warm light" width="640" height="480" loading="lazy" decoding="async" />
+            </div>
+            <div class="cta__copy">
+              <p class="eyebrow">Plan your visit</p>
+              <h2 id="cta-title" class="h2" data-split>A seat, a moment, a ritual. We’ll save it for you.</h2>
+              <p class="lead">No fees. Easy changes. Thoughtful hospitality.</p>
+              <div class="hero__ctas">
+                <a class="btn btn--primary" href="/visit.html#reserve" data-magnetic>Reserve a Table <svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg></a>
+                <button class="btn btn--secondary" type="button" data-chat-ask="Are you open now?">Ask Dew <svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+  </body>
+</html>

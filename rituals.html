@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include partials/head.html -->
+    <title>Rituals · Four Steps, One Slow Cup | Oiyo</title>
+    <meta name="description" content="Follow a cup of Oiyo coffee from bean to table in 3D, brew along with our interactive pour-over timer, and book a latte art, matcha or home-brewing workshop." />
+    <link rel="canonical" href="https://oiyo.cafe/rituals.html" />
+    <meta property="og:title" content="Rituals · Oiyo" />
+    <meta property="og:description" content="Source, roast, pour, share: the slow ritual behind every cup." />
+    <link rel="stylesheet" href="/src/styles/pages/rituals.css" />
+    <script type="module" src="/src/js/pages/rituals.js"></script>
+  </head>
+  <body data-page="rituals">
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="rituals-hero" aria-labelledby="rituals-title">
+        <div class="container rituals-hero__inner">
+          <p class="eyebrow" data-hero-in><svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg> Rituals</p>
+          <h1 id="rituals-title" class="display-hero" data-split data-split-now>Four steps.<br /><em class="accent">One slow cup.</em></h1>
+          <p class="lead" data-hero-in>Scroll to follow a cup from green bean to shared table, then brew along at home with our pour-over timer.</p>
+          <a class="scroll-cue rituals-hero__cue" href="#pour" data-hero-in><span></span>Begin the ritual</a>
+        </div>
+      </section>
+
+      <!-- Scroll-driven 3D pour-over -->
+      <section class="pour" id="pour" data-pour aria-label="The ritual, step by step">
+        <div class="pour__sticky">
+          <div class="pour__stage stage" data-pour-stage data-cursor="Ritual">
+            <img class="stage__poster" data-pour-poster src="/img/beans-sm.webp" srcset="/img/beans-sm.webp 640w, /img/beans-md.webp 960w, /img/beans-lg.webp 1400w" sizes="(min-width: 900px) 55vw, 100vw" alt="" width="640" height="480" loading="lazy" decoding="async" />
+          </div>
+          <ol class="pour__dots" aria-hidden="true">
+            <li class="is-active"><span>Source</span></li>
+            <li><span>Roast</span></li>
+            <li><span>Pour</span></li>
+            <li><span>Share</span></li>
+          </ol>
+        </div>
+        <div class="pour__steps">
+          <article class="pour-step" data-step="0" data-poster="beans">
+            <span class="pour-step__n">01</span>
+            <h2 class="h2">Source</h2>
+            <p>It begins far from here, on twelve partner farms in Ethiopia, Colombia and Guatemala. We buy green coffee directly, pay well above fair-trade minimums, and visit at harvest whenever we can.</p>
+            <p class="pour-step__note"><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg> Seasonal, traceable, sustainably grown.</p>
+          </article>
+          <article class="pour-step" data-step="1" data-poster="grounds">
+            <span class="pour-step__n">02</span>
+            <h2 class="h2">Roast</h2>
+            <p>Three mornings a week, twelve kilos at a time. We roast lighter than most, chasing sweetness and clarity over smoke, and taste every batch before it reaches the bar.</p>
+            <p class="pour-step__note"><svg class="icon" aria-hidden="true"><use href="#i-flame" /></svg> Small batches bring out each bean’s truest character.</p>
+          </article>
+          <article class="pour-step" data-step="2" data-poster="pour-over">
+            <span class="pour-step__n">03</span>
+            <h2 class="h2">Pour</h2>
+            <p>Water at 94°C, a thirty-second bloom, then a slow spiral in four stages. Three and a half minutes that cannot be hurried, and shouldn’t be.</p>
+            <p class="pour-step__note"><svg class="icon" aria-hidden="true"><use href="#i-dripper" /></svg> Time and temperature, honored.</p>
+          </article>
+          <article class="pour-step" data-step="3" data-poster="cheers">
+            <span class="pour-step__n">04</span>
+            <h2 class="h2">Share</h2>
+            <p>The last step is the reason for all the others. Two cups, one table, nowhere else to be. Stay as long as you like.</p>
+            <a class="btn btn--primary" href="/visit.html#reserve" data-magnetic>Save us a seat <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Brew timer -->
+      <section class="section" id="timer" aria-labelledby="timer-title">
+        <div class="container">
+          <div class="timer sheet">
+            <div class="timer__copy">
+              <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg> Brew along</p>
+              <h2 id="timer-title" class="h2" data-split>The ritual timer</h2>
+              <p class="lead">Pick a method and press start. We’ll guide each pour, so you can watch the bloom instead of the clock.</p>
+              <div class="timer__methods" role="radiogroup" aria-label="Brewing method">
+                <button class="chip is-active" type="button" role="radio" aria-checked="true" data-method="pourover"><svg class="icon" aria-hidden="true"><use href="#i-dripper" /></svg>Pour-over · 3:30</button>
+                <button class="chip" type="button" role="radio" aria-checked="false" data-method="press"><svg class="icon" aria-hidden="true"><use href="#i-cup" /></svg>French press · 4:00</button>
+                <button class="chip" type="button" role="radio" aria-checked="false" data-method="matcha"><svg class="icon" aria-hidden="true"><use href="#i-leaf" /></svg>Matcha · 1:00</button>
+              </div>
+              <dl class="timer__recipe" data-timer-recipe></dl>
+            </div>
+            <div class="timer__dial">
+              <svg class="timer__ring" viewBox="0 0 220 220" aria-hidden="true">
+                <circle cx="110" cy="110" r="96" class="timer__track" />
+                <circle cx="110" cy="110" r="96" class="timer__progress" data-timer-ring />
+              </svg>
+              <div class="timer__center">
+                <p class="timer__time" data-timer-time aria-live="off">3:30</p>
+                <p class="timer__step" data-timer-step aria-live="polite">Ready when you are</p>
+              </div>
+              <div class="timer__controls">
+                <button class="timer__btn timer__btn--main" type="button" data-timer-toggle aria-label="Start timer"><svg class="icon" aria-hidden="true"><use href="#i-play" /></svg></button>
+                <button class="timer__btn" type="button" data-timer-reset aria-label="Reset timer"><svg class="icon" aria-hidden="true"><use href="#i-reset" /></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workshops -->
+      <section class="section" id="workshops" aria-labelledby="workshops-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg> Workshops</p>
+            <h2 id="workshops-title" class="h2" data-split>Rituals, taught</h2>
+            <p>Small groups, generous pours and everything you need to take the ritual home.</p>
+          </header>
+          <div class="grid grid-3 grid-3--lock" data-stagger>
+            <article class="w-card" data-reveal>
+              <div class="w-card__media"><img src="/img/cheers-sm.webp" alt="Two people toasting lattes with latte art" width="640" height="480" loading="lazy" decoding="async" /><span class="w-card__date">1st Saturday · 4 PM</span></div>
+              <div class="w-card__body">
+                <h3 class="h3">Latte Art Saturdays</h3>
+                <p>Hearts, tulips and the elusive rosetta. Eight seats, one machine per pair, unlimited milk.</p>
+                <div class="w-card__foot"><span class="price">$45</span><a class="link-arrow" href="/visit.html?occasion=Workshop#reserve">Reserve a spot <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a></div>
+              </div>
+            </article>
+            <article class="w-card" data-reveal>
+              <div class="w-card__media"><img src="/img/matcha-ritual-sm.webp" alt="Matcha powder and a bamboo whisk" width="640" height="480" loading="lazy" decoding="async" /><span class="w-card__date">Sundays · 9 AM</span></div>
+              <div class="w-card__body">
+                <h3 class="h3">Matcha Ceremony</h3>
+                <p>Sift, whisk and slow down. A quiet hour exploring ceremonial matcha and its rituals.</p>
+                <div class="w-card__foot"><span class="price">$38</span><a class="link-arrow" href="/visit.html?occasion=Workshop#reserve">Reserve a spot <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a></div>
+              </div>
+            </article>
+            <article class="w-card" data-reveal>
+              <div class="w-card__media"><img src="/img/brew-kit-sm.webp" alt="A home pour-over brewing kit" width="640" height="480" loading="lazy" decoding="async" /><span class="w-card__date">Wednesdays · 6 PM</span></div>
+              <div class="w-card__body">
+                <h3 class="h3">Home Brewing 101</h3>
+                <p>Grind size, ratios and water. Leave with a bag of beans and a recipe card for your kitchen.</p>
+                <div class="w-card__foot"><span class="price">$40</span><a class="link-arrow" href="/visit.html?occasion=Workshop#reserve">Reserve a spot <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section--tight" aria-label="Ritual reminder">
+        <div class="container">
+          <div class="ritual-note panel-forest" data-reveal>
+            <p class="ritual-note__text display">Take a breath. <em class="accent">Sip slowly.</em> You’re exactly where you need to be.</p>
+            <div class="badge" aria-hidden="true">
+              <svg class="badge__text" viewBox="0 0 100 100"><defs><path id="badge-r" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0" /></defs><text><textPath href="#badge-r">Slow brewed · Meaningfully made · </textPath></text></svg>
+              <svg class="badge__icon"><use href="#i-sprig" /></svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+  </body>
+</html>

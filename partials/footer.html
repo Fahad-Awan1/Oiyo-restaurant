@@ -1,0 +1,121 @@
+<footer class="site-footer">
+  <div class="site-footer__wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 40C180 80 360 90 540 62S900 0 1080 14s300 50 360 56V90H0z" /></svg>
+  </div>
+  <div class="site-footer__body">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo logo--light" aria-label="Oiyo, home">
+          <span class="logo__word">OIYO</span>
+          <svg class="logo__mark" viewBox="0 0 56 48" aria-hidden="true"><use href="#logo-mark" /></svg>
+        </a>
+        <p class="footer-brand__lead">Coffee, matcha and slow bakes, served in a garden room in Portland. Take a breath. Sip slowly.</p>
+        <form class="newsletter" data-newsletter novalidate>
+          <label class="visually-hidden" for="nl-email">Email address</label>
+          <input id="nl-email" type="email" name="email" placeholder="Your email for the Journal" autocomplete="email" required />
+          <button class="btn btn--light btn--sm" type="submit">Join <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+          <p class="newsletter__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Explore</h2>
+        <ul>
+          <li><a href="/menu.html">Menu</a></li>
+          <li><a href="/story.html">Our Story</a></li>
+          <li><a href="/rituals.html">Rituals &amp; Workshops</a></li>
+          <li><a href="/journal.html">Journal</a></li>
+          <li><a href="/menu.html#allergens">Allergen guide</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Visit</h2>
+        <address>24 Willow Lane<br />Portland, OR 97214</address>
+        <ul class="footer-hours">
+          <li><span>Mon – Fri</span><span>7:00 – 18:00</span></li>
+          <li><span>Saturday</span><span>8:00 – 19:00</span></li>
+          <li><span>Sunday</span><span>8:00 – 17:00</span></li>
+        </ul>
+        <p class="status-pill status-pill--dark" data-open-status><span class="status-pill__dot"></span><span data-open-text>Checking our hours…</span></p>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-col__title">Connect</h2>
+        <ul class="footer-social">
+          <li><a href="https://instagram.com" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram" /></svg>Instagram</a></li>
+          <li><a href="https://pinterest.com" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pinterest" /></svg>Pinterest</a></li>
+          <li><a href="mailto:safersolutionllc@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>safersolutionllc@gmail.com</a></li>
+          <li><a href="tel:+17133645155"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>+1 713 364-5155</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-giant" aria-hidden="true">OIYO</div>
+
+    <div class="container footer-bottom">
+      <p><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg> Rooted in ritual. Made for slowing down.</p>
+      <p>&copy; <span data-year>2026</span> Oiyo Café. All rights reserved.</p>
+      <a href="#main" class="back-top" data-back-top>Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-ur" /></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Order tray -->
+<div class="drawer-overlay" data-tray-close hidden></div>
+<aside class="tray" id="tray" aria-label="Your order tray" aria-hidden="true" tabindex="-1">
+  <header class="tray__head">
+    <div>
+      <p class="eyebrow">Your tray</p>
+      <h2 class="tray__title">A little ritual, gathered.</h2>
+    </div>
+    <button class="icon-btn" type="button" data-tray-close aria-label="Close tray"><svg class="icon" aria-hidden="true"><use href="#i-close" /></svg></button>
+  </header>
+  <ul class="tray__list" data-tray-list></ul>
+  <div class="tray__empty" data-tray-empty>
+    <svg class="tray__empty-icon" aria-hidden="true"><use href="#i-cup" /></svg>
+    <p>Your tray is empty. Tap <strong>+</strong> on anything that calls to you.</p>
+    <a class="btn btn--secondary btn--sm" href="/menu.html">Browse the menu <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+  </div>
+  <footer class="tray__foot" data-tray-foot hidden>
+    <div class="tray__total"><span>Total</span><strong data-tray-total>$0.00</strong></div>
+    <p class="tray__note">Show this tray at the counter, or call ahead and we’ll have it ready.</p>
+    <div class="tray__actions">
+      <a class="btn btn--primary" href="tel:+17133645155"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg> Call to order</a>
+      <button class="btn btn--tertiary" type="button" data-tray-clear>Clear tray</button>
+    </div>
+  </footer>
+</aside>
+
+<!-- Chat host (logic is lazy-loaded on first open) -->
+<div class="chat" data-chat>
+  <div class="chat__teaser" data-chat-teaser hidden>
+    <button class="chat__teaser-close" type="button" aria-label="Dismiss" data-chat-teaser-close><svg class="icon" aria-hidden="true"><use href="#i-close" /></svg></button>
+    <p><strong>Hi, I’m Dew.</strong> Ask me about hours, the menu or booking a table.</p>
+  </div>
+  <button class="chat__launcher" type="button" data-chat-toggle aria-expanded="false" aria-controls="chat-panel" aria-label="Chat with Oiyo">
+    <svg class="chat__launcher-mark" viewBox="0 0 56 48" aria-hidden="true"><use href="#logo-mark" /></svg>
+    <svg class="chat__launcher-close icon" aria-hidden="true"><use href="#i-close" /></svg>
+    <span class="chat__ping" aria-hidden="true"></span>
+  </button>
+  <section class="chat__panel" id="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title" aria-hidden="true">
+    <header class="chat__head">
+      <span class="chat__avatar"><svg viewBox="0 0 56 48" aria-hidden="true"><use href="#logo-mark" /></svg></span>
+      <div>
+        <h2 class="chat__title" id="chat-title">Dew · Oiyo Host</h2>
+        <p class="chat__sub"><span class="status-pill__dot"></span> Usually replies instantly</p>
+      </div>
+      <button class="icon-btn" type="button" data-chat-toggle aria-label="Close chat"><svg class="icon" aria-hidden="true"><use href="#i-close" /></svg></button>
+    </header>
+    <div class="chat__log" data-chat-log role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="chat__chips" data-chat-chips></div>
+    <form class="chat__form" data-chat-form autocomplete="off">
+      <label class="visually-hidden" for="chat-input">Type your question</label>
+      <input id="chat-input" type="text" placeholder="Ask about hours, menu, bookings…" maxlength="200" data-chat-input />
+      <button class="chat__send" type="submit" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-send" /></svg></button>
+    </form>
+  </section>
+</div>
+
+<div class="toasts" data-toasts aria-live="polite" aria-atomic="false"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><span class="cursor__label" data-cursor-label></span></span></div>

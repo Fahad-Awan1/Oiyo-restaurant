@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include partials/head.html -->
+    <title>Menu · Seasonal Sips &amp; Slow Bakes | Oiyo</title>
+    <meta name="description" content="Oiyo’s seasonal menu: small-batch coffee, ceremonial matcha, pastries baked every morning, all-day breakfast and pantry goods. Vegan, gluten-free and nut-free options clearly marked." />
+    <link rel="canonical" href="https://oiyo.cafe/menu.html" />
+    <meta property="og:title" content="Oiyo Menu · Seasonal Sips & Slow Bakes" />
+    <meta property="og:description" content="Coffee, matcha, pastries and breakfast, crafted with honest ingredients." />
+    <link rel="stylesheet" href="/src/styles/pages/menu.css" />
+    <script type="module" src="/src/js/pages/menu.js"></script>
+  </head>
+  <body data-page="menu">
+    <!-- @include partials/header.html -->
+
+    <main id="main">
+      <section class="page-hero menu-hero" aria-labelledby="menu-title" data-particles>
+        <div class="page-hero__deco" aria-hidden="true"></div>
+        <div class="container page-hero__grid">
+          <div class="page-hero__copy">
+            <p class="eyebrow" data-hero-in><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg> The menu · <span data-season-name>this season</span></p>
+            <h1 id="menu-title" class="display-hero" data-split data-split-now>Seasonal<br />Sips &amp;<br /><em class="accent">Slow</em> Bakes.<svg class="ornament" aria-hidden="true"><use href="#i-sprig" /></svg></h1>
+            <div class="rule" aria-hidden="true" data-hero-in><span></span></div>
+            <p class="lead" data-hero-in>Inspired by the rhythm of the seasons, our menu celebrates honest ingredients, thoughtful craft and the beauty of slowing down.</p>
+            <div class="hero__ctas" data-hero-in>
+              <a class="btn btn--primary" href="#menu-list" data-magnetic>Browse the menu <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <button class="btn btn--secondary" type="button" data-chat-ask="Vegan options">Ask about dietary needs</button>
+            </div>
+          </div>
+          <div class="page-hero__media">
+            <div class="blob">
+              <img src="/img/garden-bowl-sm.webp" srcset="/img/garden-bowl-sm.webp 640w, /img/garden-bowl-md.webp 960w, /img/garden-bowl-lg.webp 1400w" sizes="(min-width: 900px) 52vw, 100vw" alt="A colourful grain bowl with roast vegetables, avocado and herbs" width="640" height="480" fetchpriority="high" />
+            </div>
+            <div class="menu-hero__note">
+              <span class="display">All day</span>
+              <small>Breakfast is served every hour we’re open</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Toolbar: categories, dietary filters, search -->
+      <div class="menu-toolbar" id="menu-list">
+        <div class="container">
+          <div class="menu-toolbar__inner sheet">
+            <div class="menu-tabs" role="group" aria-label="Category">
+              <button class="chip is-active" type="button" data-cat-filter="all" aria-pressed="true">All</button>
+              <button class="chip" type="button" data-cat-filter="coffee" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bean" /></svg>Coffee</button>
+              <button class="chip" type="button" data-cat-filter="matcha" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-leaf" /></svg>Matcha</button>
+              <button class="chip" type="button" data-cat-filter="pastries" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-flower" /></svg>Pastries</button>
+              <button class="chip" type="button" data-cat-filter="breakfast" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg>Breakfast</button>
+              <button class="chip" type="button" data-cat-filter="pantry" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-wheat" /></svg>Pantry</button>
+            </div>
+            <div class="menu-toolbar__row">
+              <div class="menu-diet" role="group" aria-label="Dietary filters">
+                <button class="chip chip--sm" type="button" data-diet="v" aria-pressed="false">Vegan</button>
+                <button class="chip chip--sm" type="button" data-diet="gf" aria-pressed="false">Gluten-free</button>
+                <button class="chip chip--sm" type="button" data-diet="nf" aria-pressed="false">Nut-free</button>
+              </div>
+              <label class="menu-search">
+                <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+                <span class="visually-hidden">Search the menu</span>
+                <input type="search" placeholder="Search: pistachio, oat, sourdough…" data-menu-search />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section menu-section" aria-label="Menu items">
+        <div class="container">
+          <p class="menu-count" aria-live="polite"><span data-menu-count>24</span> items, crafted with intention</p>
+          <div class="grid grid-4 grid-4--lock grid-4--phone2 menu-grid" data-menu-grid>
+            <!-- @render menu-grid -->
+          </div>
+          <div class="menu-empty" data-menu-empty hidden>
+            <svg class="icon" aria-hidden="true"><use href="#i-cup" /></svg>
+            <p>Nothing matches those filters yet. Try another, or <button class="btn--tertiary btn" type="button" data-menu-reset>clear all filters</button>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chef's seasonal tray -->
+      <section class="section--tight" id="seasonal" aria-labelledby="tray-title">
+        <div class="container">
+          <article class="feature-tray panel-forest" data-reveal>
+            <div class="feature-tray__copy">
+              <p class="eyebrow">Chef’s seasonal tray</p>
+              <h2 id="tray-title" class="h2">A Tasting of the <em class="accent">Season.</em></h2>
+              <p>A curated selection of sweet and savory favorites, crafted to share and savor. A little of everything, served slowly.</p>
+              <p class="feature-tray__price display">$28.00</p>
+              <button class="btn btn--light" type="button" data-add="seasonal-tray" data-magnetic>Add to tray <svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></button>
+            </div>
+            <div class="feature-tray__img blob blob--b">
+              <img src="/img/chef-plate-sm.webp" srcset="/img/chef-plate-sm.webp 640w, /img/chef-plate-md.webp 960w, /img/chef-plate-lg.webp 1400w" sizes="(min-width: 900px) 50vw, 100vw" alt="A brunch tasting spread with pastries, eggs and fruit" width="640" height="480" loading="lazy" decoding="async" />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Allergens -->
+      <section class="section" id="allergens" aria-labelledby="allergen-title">
+        <div class="container allergen-grid">
+          <div>
+            <p class="eyebrow">Good to know</p>
+            <h2 id="allergen-title" class="h2" data-split>Allergens &amp; dietary care</h2>
+            <p class="lead">Every item carries simple labels. Our kitchen handles nuts, gluten, dairy and eggs, so please tell us about any allergy and we will guide you through the menu.</p>
+            <ul class="legend">
+              <li><span>V</span> Vegan: no animal products</li>
+              <li><span>GF</span> Gluten-free ingredients</li>
+              <li><span>NF</span> Made without nuts</li>
+            </ul>
+          </div>
+          <div class="accordion">
+            <details>
+              <summary>Which milks do you offer? <svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <div>Whole milk from a family dairy in Tillamook, plus our house oat milk at no extra charge. Almond is available on request (not nut-free).</div>
+            </details>
+            <details>
+              <summary>Is the matcha sweetened? <svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <div>Never by default. Add wildflower honey or smoked maple if you like a little sweetness.</div>
+            </details>
+            <details>
+              <summary>Can I order ahead? <svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <div>Add items to your tray with the <strong>+</strong> buttons, then call us on +1 713 364-5155 and we will have it ready, or show the tray at the counter.</div>
+            </details>
+            <details>
+              <summary>Do you have decaf? <svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <div>Yes. Swiss Water decaf for any espresso drink, at no extra cost.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sourcing band -->
+      <section class="section--tight" aria-label="Sourcing">
+        <div class="container">
+          <div class="source-band sheet" data-reveal>
+            <span class="source-band__icon"><svg class="icon" aria-hidden="true"><use href="#i-sprig" /></svg></span>
+            <div>
+              <p class="eyebrow">Rooted in purpose</p>
+              <p class="source-band__title display">Ethically sourced. Sustainably minded.<svg class="ornament" aria-hidden="true"><use href="#i-sprig" /></svg></p>
+              <p>We partner with farmers and makers who share our values of care: for the earth, for people and for craft.</p>
+            </div>
+            <a class="btn btn--tertiary" href="/story.html">Our ingredients <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+  </body>
+</html>
